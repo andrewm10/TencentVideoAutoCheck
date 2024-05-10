@@ -8,8 +8,8 @@ from urllib.parse import quote
 def tencent_video_sign_in():
     millisecond_time = round(time.time() * 1000)
 
-    login_url = "https://access.video.qq.com/user/auth_refresh?vappid=XX&vsecret=XX&type=qq&g_tk=&g_vstk=XX&g_actk=XX"  # 替换成自己的
-
+    login_url = "https://access.video.qq.com/user/auth_refresh?vappid=11059694&vsecret=fdf61a6be0aad57132bc5cdf78ac30145b6cd2c1470b0cfe&type=qq&g_tk=&g_vstk=641183540&g_actk=641183540"  # 替换成自己的
+    
     # 从环境变量获取 LOGIN_COOKIE 的值
     login_cookie = os.getenv('LOGIN_COOKIE')
 
@@ -49,7 +49,7 @@ def tencent_video_sign_in():
         rsp_score = sign_rsp_json['check_in_score']
 
         print("本次签到积分："+str(rsp_score))
-        requests.get('https://sc.ftqq.com/自己的sever酱号.send?text=' + quote('签到积分：'+str(rsp_score)))
+        requests.get('https://sc.ftqq.com/SCU16644Tf1b9e6092755261a8ea2527d66e0e2245a19f34e70760.send?text=' + quote('签到积分：'+str(rsp_score)))
 
 
 if __name__ == '__main__':
